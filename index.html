@@ -47,6 +47,13 @@
 
       const levels = 18
       let keys = generateKeys(levels)
+      
+      swal({
+          title: `Juego de memoria`,
+          text: `Niveles: 18`,
+          timer: 1000,
+          showConfirmButton: false
+        })
 
       function nextRound(levelActual) {
         if (levelActual == levels) {
@@ -67,7 +74,7 @@
         }
 
         swal({
-          title: `Nivel ${levelActual + 1} de ${levels}`,
+          title: `Nivel ${levelActual + 1}`,
           timer: 1000,
           showConfirmButton: false
         })
