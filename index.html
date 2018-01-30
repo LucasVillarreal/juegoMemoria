@@ -47,13 +47,13 @@
 
       const levels = 18
       let keys = generateKeys(levels)
-      
-      swal({
-          title: `Juego de memoria`,
-          text: `Niveles: 18`,
-          timer: 1000,
-          showConfirmButton: false
-        })
+
+       swal({
+            title: 'Juego de Memoria',
+            text: 'Niveles: 18',
+            showConfirmButton: false,
+            timer: 2000
+          }, nextRound(0))
 
       function nextRound(levelActual) {
         if (levelActual == levels) {
@@ -74,10 +74,11 @@
         }
 
         swal({
-          title: `Nivel ${levelActual + 1}`,
+          title: `Nivel ${levelActual + 1} de 18`,
           timer: 1000,
           showConfirmButton: false
         })
+       
 
         for (let i = 0; i <= levelActual; i++) {
           setTimeout(() => activate(keys[i]), 1000 * (i + 1) + 1000);
@@ -117,7 +118,7 @@
         }
       }
 
-      nextRound(0)
+      // nextRound(0)
 
       function generateKeys(levels) {
         return new Array(levels).fill(0).map(generateKeyRandom)
